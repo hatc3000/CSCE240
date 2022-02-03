@@ -195,6 +195,30 @@ public class BEChatBot {
         }
         return "I do not know the Committee Assignments";
     }
+    public int getLines() {
+        int lineCount = webdoc.size();
+
+        return lineCount;
+    }
+    public int getCharacters() {
+        int charCount = 0;
+        
+        for (int i = 0;i < webdoc.size();i++) {
+            charCount += webdoc.get(i).length();
+        }
+
+        return charCount;
+    }
+    public int getWords() {
+        int wordCount = 0;
+
+        for (int i = 0;i < webdoc.size();i++) {
+            String[] splitLine = webdoc.get(i).split(" ");
+            wordCount += splitLine.length;
+        }
+
+        return wordCount;
+    }
 }
 
 
