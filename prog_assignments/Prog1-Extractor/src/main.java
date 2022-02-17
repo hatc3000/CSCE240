@@ -19,6 +19,7 @@ public class main {
     public static void run() {
         greeting();
         BEChatBot chatbot = new BEChatBot(DISTRICT[1]);
+        System.out.println(chatbot.getPInformation());
     }
 
     /**
