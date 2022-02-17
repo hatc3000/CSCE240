@@ -1,7 +1,4 @@
-
-
-
-
+#Ryan Capron
 
 main: Shape.o Circle.o Rectangle.o Triangle.o
 	g++ ./OOGeometricPropertyCalculator.cpp $^ -o main.exe
