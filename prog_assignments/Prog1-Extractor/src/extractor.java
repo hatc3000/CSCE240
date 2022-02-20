@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class BEChatBot {
+public class extractor {
 
     /**
      * Declaring all private variables.
@@ -22,7 +22,7 @@ public class BEChatBot {
      * Constructs instance of class given URLCode.
      * @param URLCode is unique for each district.
      */
-    public BEChatBot(String URLCode) {
+    public extractor(String URLCode) {
         try {
             System.out.println("Retrieving District Representative Data");
             this.url = new URL(WEBSITE + URLCode).openConnection();
@@ -188,9 +188,9 @@ public class BEChatBot {
         for (int i = 0; i < webdoc.size();i++) {
             if(webdoc.get(i).contains("Committee Assignments")) {
                 String line = webdoc.get(i + 2);
-                line = line.replace("<li style=\"margin: 5px 0 0 0; list-style-type:square;\" ><a HREF=\"/committee.php?chamber=H#edu\">", "");
-                line = line.replace(", <span style=\"font-style: italic;\">Chairman</span></a></li></ul>", "");
-                return getName() + "\'s Committee Assignments are " + line;
+                line = line.replaceAll("(<li style=\"margin: 5px 0 0 0; list-style-type:square;\" ><a HREF=\"/committee[.]php[?]chamber=H#...\">)", "\n");
+                line = line.replaceAll("(</a></li></ul>)|(</a></li>)", "");
+                return getName() + "\'s Committee Assignments are: " + line;
             }
         }
         return "I do not know the Committee Assignments";
