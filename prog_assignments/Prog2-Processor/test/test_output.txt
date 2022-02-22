@@ -13,3 +13,5 @@ service in public office - returns representative's service in public office
 
 Not shown in outputs.png
 party - returns political party of representative
+bills support - Returns bills supported by representative
+Vote History - returns history of votes by representative

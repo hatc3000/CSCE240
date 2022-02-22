@@ -41,6 +41,12 @@ public class prog2processor {
         else if (args[0].equalsIgnoreCase("Service in Public Office")) {
             System.out.println(get.getSIPO());
         }
+        else if (args[0].equalsIgnoreCase("Vote History")) {
+            System.out.println(get.getVHistory());
+        }
+        else if (args[0].equalsIgnoreCase("bills support")) {
+            System.out.println(get.getSBills());
+        }
         else {
             System.out.println("I'm sorry I do not currently support that argument.  Please check test_output.txt in the test folder for supported arguments.");
         }

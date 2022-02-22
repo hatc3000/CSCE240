@@ -4,8 +4,10 @@
 
  /**
   * ArrayList imported as data type to hold HTML lines
+  * Java.io imported for reading static HTML files
   */
 import java.util.ArrayList;
+import java.io.*;
 
 public class getters {
 
@@ -198,5 +200,50 @@ public class getters {
         }
         return "I do not know the Service In Public Office";
     }
+    public String getSBills() {
+        String bills = "";
 
+        try {
+            String currLine;
+            BufferedReader html = new BufferedReader(new FileReader("../data/sponsoredBills.txt"));
+            while ((currLine = html.readLine()) != null) {
+                if (currLine.contains("By <a href=\"/member.php?code=15909089&chamber=H\">")) {
+                    currLine = currLine.replaceAll(".*font-weight:bold;\">|, By <a href=\"/.*", "");
+                    bills += currLine + "\n";
+                }
+            }
+            html.close();        
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        return bills;
+    }
+    public String getVHistory() {
+        ArrayList<String> votes = new ArrayList<String>();
+
+        try {
+            String currLine;
+            BufferedReader html = new BufferedReader(new FileReader("../data/voteHistory.txt"));
+            while ((currLine = html.readLine()) != null) {
+                if (currLine.contains("&summary=B&headerfooter=1\"")) {
+                    currLine = currLine.replaceAll(".*KEY=.....\">", "VOTE #: ");
+                    currLine = currLine.replaceAll("</a>.*B&headerfooter=1\">H", " - BILL #: ");
+                    currLine = currLine.replaceAll("</a></td><td style=\"vertical-align:top.*rowspan=\"1\">[(]", " - SUMMARY: ");
+                    currLine = currLine.replaceAll("[)].* color:(purple|green|red);\">", " - VOTE CASTED: ");
+                    currLine = currLine.replaceAll("</td.*Passed.*", " - RESULT: Passed");
+                    currLine = currLine.replaceAll("</td.*Failed.*", " - RESULT: Failed");
+                    currLine = currLine.replaceAll("</td.*Elected.*", " - RESULT: Elected");
+                    currLine = currLine.replaceAll("</td.*Not Elected.*", " - RESULT: Not Elected");
+                    currLine = currLine.replaceAll("</a>", "");
+
+                    votes.add(currLine + "\n");
+                }
+           }
+            html.close();        
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return votes.toString();
+    }
 }
