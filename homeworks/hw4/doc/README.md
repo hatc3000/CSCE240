@@ -1,0 +1,1 @@
+To run the program, clone the git repository and run make in your terminal.  
