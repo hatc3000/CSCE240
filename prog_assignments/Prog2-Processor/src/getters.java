@@ -53,7 +53,7 @@ public class getters {
     public String getParty() {
         for(String i : webdoc) {
             if (i.contains("Republican")) {
-                return getName() + "is a Republican";
+                return getName() + " is a Republican";
             }
         }
         return getName() + "is a Democrat";
@@ -185,7 +185,7 @@ public class getters {
         }
         return "I do not know the Committee Assignments";
     }
-    //get Service In PUblic Office
+    //get Service In Public Office
     public String getSIPO() {
         for (int i = 0;i < webdoc.size();i++) {
             if (webdoc.get(i).contains("Service In Public Office")) {
@@ -205,7 +205,7 @@ public class getters {
 
         try {
             String currLine;
-            BufferedReader html = new BufferedReader(new FileReader("../data/sponsoredBills.txt"));
+            BufferedReader html = new BufferedReader(new FileReader("Prog2-Processor/data/sponsoredBills.txt"));
             while ((currLine = html.readLine()) != null) {
                 if (currLine.contains("By <a href=\"/member.php?code=15909089&chamber=H\">")) {
                     currLine = currLine.replaceAll(".*font-weight:bold;\">|, By <a href=\"/.*", "");
@@ -224,7 +224,7 @@ public class getters {
 
         try {
             String currLine;
-            BufferedReader html = new BufferedReader(new FileReader("../data/voteHistory.txt"));
+            BufferedReader html = new BufferedReader(new FileReader("Prog2-Processor/data/voteHistory.txt"));
             while ((currLine = html.readLine()) != null) {
                 if (currLine.contains("&summary=B&headerfooter=1\"")) {
                     currLine = currLine.replaceAll(".*KEY=.....\">", "VOTE #: ");
