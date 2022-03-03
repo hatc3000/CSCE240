@@ -1,3 +1,14 @@
 All user queries should be handled in some fashion.  
 Words other than the direct keyword will also return results. Example being "live" will return her home address.
 
+Statements involving "live" and "where" will return home address.
+Statements involving "where" will return business address.
+Statements involving "contact" or "phone" will return business phone and address.  If the statement also involves "home" then home phone and address will be returned.
+Statements involving "contact" and "address" will return business by default.  It will return home address if home is contained in the statement.
+Statements involving "committees" will return committees representative is on.
+Statements involving "party" will return representative's political affiliation.
+Statements involving "sponsored" and "bills" will return sponsored bills
+Statements involving "vote" and "history" will return vote history
+Statements involving "region" or "counties" will return representative's region
+Statements involving "service" or "public office" or "public" will return service in public office.
+Statements involving "everything" will return basic information of representative.  All information will not be returned as it will crash most computers.
