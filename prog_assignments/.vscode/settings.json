@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "prog3-ui/src",
+        "Prog2-Processor/src",
+        "Prog1-Extractor/src"
+    ]
+}

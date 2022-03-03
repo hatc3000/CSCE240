@@ -44,7 +44,7 @@ public class extractor {
      */
     private void outputFile() {
         try {
-            BufferedWriter output = new BufferedWriter(new FileWriter("data/html.txt"));
+            BufferedWriter output = new BufferedWriter(new FileWriter("Prog1-Extractor/data/html.txt"));
 
             for (int i = 0;i < webdoc.size();i++) {
                 output.write(webdoc.get(i));
@@ -218,6 +218,9 @@ public class extractor {
         }
 
         return wordCount;
+    }
+    public ArrayList<String> getHTMLArray() {
+        return this.webdoc;
     }
 }
 

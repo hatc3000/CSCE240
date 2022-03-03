@@ -88,7 +88,7 @@ public class getters {
                 line[1] = line[1].replaceAll("<br>", " ");
                 line[1] = line[1].replaceAll("</p>", "");
 
-                return line[1];
+                return getName() + "'s Business address is " + line[1];
             }
         }
         return "I do not know the business address";
@@ -104,7 +104,7 @@ public class getters {
                 line[1] = line[1].replaceAll("<br>", "\n");
                 line[1] = line[1].replaceAll("</p>", "");
 
-                return line[1];
+                return getName() + "'s home address is: \n" + line[1];
             }
         }
         return "I do not know the home address";
