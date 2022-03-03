@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class decisionTree {
     /** Declaring private instance of Prog2 getters class */
-    getters get;
+    private getters get;
 
     /** public parameterized constructor */
     public decisionTree(ArrayList<String> webdoc) {
