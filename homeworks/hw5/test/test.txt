@@ -1,0 +1,9 @@
+To run the program follow the below steps in order.
+
+1. Navigate to the src folder in terminal
+2. Run make file
+3. Enter "combination" case-sensitive to calculate a combination
+4. If combination is not desired then factorial (not case-sensitive)
+5. Enter the first number for combination or number to calculate factorial of
+6. If combination enter the second integer
+7. Read results and rerun make program to run the program again.
