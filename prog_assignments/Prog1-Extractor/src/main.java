@@ -13,7 +13,7 @@ public class main {
     public static String[] DISTRICT = {"36","0015909089"};
 
     public static void main(String[] args) {
-        main.run();
+        run();
     }
     
     public static void run() {

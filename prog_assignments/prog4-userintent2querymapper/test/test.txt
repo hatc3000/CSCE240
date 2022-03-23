@@ -11,5 +11,11 @@ Statements involving "sponsored" and "bills" will return sponsored bills
 Statements involving "vote" and "history" will return vote history
 Statements involving "region" or "counties" will return representative's region
 Statements involving "service" or "public office" or "public" will return service in public office.
-Statements involving "tell me about" or "personal" or "wahts she like" will return personal information
+Statements involving "tell me about" or "personal" or "what's she like" will return personal information
 Statements involving "everything" will return basic information of representative.  All information will not be returned as it will crash most computers.
+
+
+
+The program is currently developed to include match metrics in every chatbot response.  
+
+The two screenshots show the metrics change through the same function call and other various possible calls and their returned metric.

@@ -22,6 +22,7 @@ public class userInterface {
          */ 
         extractor Extractor = new extractor(DISTRICT[1]);
         decisionTree DecisionTree = new decisionTree(Extractor.getHTMLArray());
+        intent2query intent2Query;
         Scanner keyboard = new Scanner(System.in);
         
         /** While loop to allow for multiple commands */
@@ -40,6 +41,7 @@ public class userInterface {
             }
             else {
                 System.out.println(DecisionTree.answers(question));
+                intent2Query = new intent2query(question);
             }
         }
         keyboard.close();

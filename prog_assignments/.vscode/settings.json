@@ -1,7 +1,9 @@
 {
     "java.project.sourcePaths": [
+        "prog4-intent2query/src",
         "prog3-ui/src",
         "Prog2-Processor/src",
-        "Prog1-Extractor/src"
+        "Prog1-Extractor/src",
+        "prog4-userintent2querymapper/src"
     ]
 }
