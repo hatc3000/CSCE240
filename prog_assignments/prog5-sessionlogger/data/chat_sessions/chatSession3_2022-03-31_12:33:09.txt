@@ -1,0 +1,8 @@
+User: blah
+System: I'm sorry I do not know how to answer that.
+User: blah
+System: I'm sorry I do not know how to answer that.
+
+#user_utterance: 2
+#system_utterance: 2
+Chat duration: 0:0:4

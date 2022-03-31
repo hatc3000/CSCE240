@@ -30,13 +30,15 @@ public class extractor {
             while(scanner.hasNextLine())
                 this.webdoc.add(scanner.nextLine());
             scanner.close();
+
+            System.out.println("Cleaning up representative data");
+            this.webdoc = cleanData(this.webdoc);
+            outputFile();
         } catch (Exception e) {
             System.out.println(e.getStackTrace());
             System.out.println("Could not retrive data");
+            //TODO call readHTML()
         }
-        System.out.println("Cleaning up representative data");
-        this.webdoc = cleanData(this.webdoc);
-        outputFile();
     }
 
     /**
@@ -221,6 +223,9 @@ public class extractor {
     }
     public ArrayList<String> getHTMLArray() {
         return this.webdoc;
+    }
+    public void readHTML() {
+        //TODO read local HTML into this.webdoc
     }
 }
 

@@ -23,8 +23,11 @@ public class userInterface {
         extractor Extractor = new extractor(DISTRICT[1]);
         decisionTree DecisionTree = new decisionTree(Extractor.getHTMLArray());
         intent2query intent2Query;
+        sessionLogger SessionLogger;
+        SessionLogger = new sessionLogger();
+        String response;
         Scanner keyboard = new Scanner(System.in);
-        
+
         /** While loop to allow for multiple commands */
         greeting();
         boolean repeat = true;
@@ -40,10 +43,14 @@ public class userInterface {
                 repeat = false;
             }
             else {
-                System.out.println(DecisionTree.answers(question));
+                response = DecisionTree.answers(question);
+                SessionLogger.addUQuery(question);
+                SessionLogger.addSQuery(response);
                 intent2Query = new intent2query(question);
+                System.out.println(response);
             }
         }
+        SessionLogger.close();
         keyboard.close();
     }
 

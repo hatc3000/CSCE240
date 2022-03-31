@@ -4,6 +4,7 @@
         "prog3-ui/src",
         "Prog2-Processor/src",
         "Prog1-Extractor/src",
-        "prog4-userintent2querymapper/src"
+        "prog4-userintent2querymapper/src",
+        "prog5-sessionlogger/src"
     ]
 }
