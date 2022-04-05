@@ -1,0 +1,9 @@
+To test this program, compile both classes with the following commands:
+"javac sessionLogger.java",
+"javac testDriver.java".
+
+The main method for this program to run is in the testDriver class.  This will take in the following arguments (not case-sensitive):
+<summary> <chat int> which will return the statistics of the chat from index.
+<showChat-Summary> <chat int> which will return the statistics of chat at index and also the full utterance from the user and system.
+<showChat> <chat int> which will return the full chat utterance of the chat at chat index.
+

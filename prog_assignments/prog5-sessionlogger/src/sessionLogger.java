@@ -5,6 +5,8 @@
 /**
  * IO library for writing to txt and csv files.
  * Time library to calculate duration of conversations
+ * Time.format library for formatting time
+ * ArrayList used to hold user and system utterance
  */
 import java.io.*;
 import java.time.*;
@@ -12,6 +14,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class sessionLogger {
+    /** Declaring all private variables 
+     * Initializing date time formatters and the CSV_PATH
+     */
     private String startTime;
     private String duration;
     private String startDate;
@@ -20,8 +25,12 @@ public class sessionLogger {
     private ArrayList<String[]> CSVStrings;
     private DateTimeFormatter datePattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private DateTimeFormatter timePattern = DateTimeFormatter.ofPattern("HH:mm:ss");
-    private String CSVpath = "./prog5-sessionlogger/data/chat_statistics.csv";
+    private String CSV_PATH = "./prog5-sessionlogger/data/chat_statistics.csv";
     
+    /** Public constructor of sessionLogger 
+     * Constructs ArrayLists
+     *  Starts the timer to calculate end statistics
+     */
     public sessionLogger() {
         userUtterance = new ArrayList<String>();
         systemUtterance = new ArrayList<String>();
@@ -30,8 +39,9 @@ public class sessionLogger {
         setCSV();
     }
 
+    // Write session statistics to new CSV line
     public void writeToCSV() {
-        try (FileWriter fw = new FileWriter(CSVpath, true);
+        try (FileWriter fw = new FileWriter(CSV_PATH, true);
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);) {
             
@@ -52,6 +62,8 @@ public class sessionLogger {
             i.printStackTrace();
         }
     }
+
+    // Write session statistics to new TXT file
     public void writeToTxt() {
         File file = new File("./prog5-sessionlogger/data/chat_sessions/chatSession" + getChatFile());
 
@@ -77,9 +89,14 @@ public class sessionLogger {
         }
     }
 
+    // Return chat file name
     private String getChatFile() {
         return getChatNumber() + "_" + getDateTime() + ".txt";
     }
+
+    /**
+     * @return index where chat session will be recorded
+     */
     private int getChatNumber() {
         File folder = new File("./prog5-sessionLogger/data/chat_sessions");
         File[] chatFiles = folder.listFiles();
@@ -95,6 +112,8 @@ public class sessionLogger {
         }
         return lastChat + 1;
     }
+
+    // Sets the local date and time to now
     private void setDateTime() {
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
@@ -105,7 +124,7 @@ public class sessionLogger {
     private String getDateTime() {
          return startDate + '_' + startTime;
     }
-
+    
     public int getUQueryNum() {
         return userUtterance.size();
     }
@@ -116,6 +135,10 @@ public class sessionLogger {
         LocalTime localTime = LocalTime.now();
         return timePattern.format(localTime);
     }
+
+    /**
+     * Calculates the duration between start time and end time sets local variable duration
+     */
     public void setDuration() {
         String[] splitStartTime = startTime.split(":");
         String[] splitEndTime = getEndTime().split(":");
@@ -131,6 +154,10 @@ public class sessionLogger {
         duration = String.valueOf(hours) + ":" + String.valueOf(minutes) + ":" + String.valueOf(seconds);
     }
 
+    /**
+     * Prints the chat session to user console
+     * @param chatNumber is number of the chat session to print
+     */
     public void printChat(int chatNumber) {
         String chatPath = "./prog5-sessionLogger/data/chat_sessions/chatSession" + CSVStrings.get(chatNumber)[1];
         File chatFile = new File(chatPath);
@@ -145,6 +172,11 @@ public class sessionLogger {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Prints the chat summary to the user's console
+     * @param chatNumber is the number of the chat session to print
+     */
     public void printChatSummary(int chatNumber) {
         String chatPath = "./prog5-sessionLogger/data/chat_sessions/chatSession" + CSVStrings.get(chatNumber)[1];
         File chatFile = new File(chatPath);
@@ -164,8 +196,10 @@ public class sessionLogger {
             System.out.println(chat.get(i));
         }
     }
+
+    /** Initializes the local ArrayList CSVStrings with all lines of the CSV File */
     public void setCSV() {
-        File CSVFile = new File(CSVpath);
+        File CSVFile = new File(CSV_PATH);
         CSVStrings = new ArrayList<String[]>();
         try (FileReader CSVreader = new FileReader(CSVFile);
                 BufferedReader bufferedReader = new BufferedReader(CSVreader);) {    
@@ -203,6 +237,11 @@ public class sessionLogger {
 
         return totalQueries;
     }
+
+    /**
+     * Parses the duration into integers to calculate total duration of all chat sessions
+     * @return total duration of all chat sessions in String type
+     */
     public String getTotalDuration() {
         int hours = 0;
         int minutes = 0;
@@ -227,18 +266,33 @@ public class sessionLogger {
                     String.valueOf(minutes) + ":" +
                     String.valueOf(seconds);
     }
+
+    /**
+     * Adds user query to local ArrayList
+     * @param query is user utterance
+     */
     public void addUQuery(String query) {
         userUtterance.add(query);
     }
+
+    /**
+     * Adds system query to local ArrayList
+     * @param query is system utterance
+     */
     public void addSQuery(String query) {
         systemUtterance.add(query);
     }
 
+    /**
+     * Calculates the total duration and sets local variable
+     * Writes statistics to CSV File
+     * Writes chat session to TXT File
+     * Provides successful recording message
+     */
     public void close() {
         setDuration();
         writeToCSV();
         writeToTxt();
-        System.out.println(getTotalSQueries());
         System.out.println("Session logger successfully closed and record was written");
     }
 }
