@@ -2,7 +2,6 @@
  * @author Ryan Capron
  */
 
-import java.io.BufferedWriter;
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
@@ -36,8 +35,8 @@ public class extractor {
             outputFile();
         } catch (Exception e) {
             System.out.println(e.getStackTrace());
-            System.out.println("Could not retrive data");
-            //TODO call readHTML()
+            System.out.println("Could not retrive data.  Reading in local HTML.");
+            readHTML();
         }
     }
 
@@ -225,7 +224,16 @@ public class extractor {
         return this.webdoc;
     }
     public void readHTML() {
-        //TODO read local HTML into this.webdoc
+        File html = new File("./Prog1-Extractor/data/html.txt");
+        String line = "";
+        try (FileReader txtReader = new FileReader(html);
+        BufferedReader bufferedReader = new BufferedReader(txtReader);) {
+            while ((line = bufferedReader.readLine()) != null) {
+                webdoc.add(line);
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR reading in local HTML.txt file\n" + e);
+        }
     }
 }
 
