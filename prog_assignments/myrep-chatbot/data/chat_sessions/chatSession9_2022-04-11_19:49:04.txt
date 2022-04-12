@@ -1,0 +1,6 @@
+User: what district do you support for Q/A
+System: Representative Merita A. "Rita" Allison is a member of District 36 representing Greenville and Spartanburg
+
+#user_utterance: 1
+#system_utterance: 1
+Chat duration: 0:0:26

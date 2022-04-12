@@ -1,0 +1,14 @@
+User: everything
+System: test
+User: committee
+System: I'm sorry I do not know how to answer that.
+User: committees
+System: Representative Merita A. "Rita" Allison's Committee Assignments are: 
+Education and Public Works, Chairman
+User: public 
+System: -Spartanburg County District Five School Board, 1986  - 1992
+-House of Representatives, 1993 - 2002, 2009 - Present
+
+#user_utterance: 4
+#system_utterance: 4
+Chat duration: 0:0:17

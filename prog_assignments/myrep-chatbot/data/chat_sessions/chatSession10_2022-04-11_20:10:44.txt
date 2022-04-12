@@ -1,0 +1,9 @@
+User: committees
+System: Representative Merita A. "Rita" Allison's Committee Assignments are: 
+Education and Public Works, Chairman
+User: what counties does
+System: Representative Merita A. "Rita" Allison represents District 36 representing Greenville and Spartanburg
+
+#user_utterance: 2
+#system_utterance: 2
+Chat duration: 0:0:19

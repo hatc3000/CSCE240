@@ -170,6 +170,20 @@ public class getters {
         return "fail";
     }
 
+    // get counties of representative
+    public String getCounties(String distNum) {
+        String[] line;
+        for(String i : webdoc) {
+            if (i.contains("District " + distNum)) {
+                line = i.split("13px;\">");
+                line = line[1].split(" Counties");
+                line[0] = line[0].replaceAll("&amp; ", "and ");
+                return line[0];
+            }
+        }
+        return "I do not know the counties she is responsible for.";
+    }
+    
     // get committee assignments of representative
     public String getCAssignments() {
         for (int i = 0; i < webdoc.size();i++) {

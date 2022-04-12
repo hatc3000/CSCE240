@@ -7,10 +7,12 @@ import java.util.ArrayList;
 public class decisionTree {
     /** Declaring private instance of Prog2 getters class */
     private getters get;
-
+    private String distNum;
+    //TODO GET RID OF IMAGINARY NUMBER BY TAKING IN 36 FROM PARENT CLASS
     /** public parameterized constructor */
-    public decisionTree(ArrayList<String> webdoc) {
+    public decisionTree(ArrayList<String> webdoc, String distNum) {
         get = new getters(webdoc);
+        this.distNum = distNum;
     }
 
     public String answers(String input) {
@@ -68,8 +70,8 @@ public class decisionTree {
             else if (input.contains("vote") && input.contains("history")) {
                 return get.getVHistory();
             }
-            else if (input.contains("region") || input.contains("counties")) {
-                return get.getRegion("36");
+            else if (input.contains("region") || input.contains("counties") || input.contains("district")) {
+                return getName() + " represents District " + distNum + " representing " +  get.getCounties(distNum);
             }
             else if (input.contains("service") || input.contains("public office") 
                         || input.contains("public")) {
@@ -78,13 +80,12 @@ public class decisionTree {
             else if (input.contains("everything")) {
                 String retA = get.getName() + "\n" + 
                         get.getParty() + "\n" +   
-                        get.getRegion("36") + "\n" + 
+                        get.getRegion(distNum) + "\n" + 
                         get.getBAdress() + "\n" + 
                         get.getPhone("business") + "\n" + 
-                        get.getCAssignments() + "\n";
-                
-                System.out.println(retA);
-                return "test";
+                        get.getCAssignments();
+
+                return retA;
             }
             else if (input.contains("hi") || input.contains("hello")) {
                 return "Hi, thank you for using this chatbot!";

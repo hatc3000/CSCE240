@@ -1,0 +1,9 @@
+User: Do you know what her favorite color is?
+System: I'm sorry I do not know how to answer that.
+
+User: this is an unsupported statement
+System: Hi, thank you for using this chatbot!
+
+#user_utterance: 2
+#system_utterance: 2
+Chat duration: 2:0:125

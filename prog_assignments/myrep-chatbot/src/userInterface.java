@@ -2,16 +2,22 @@
  * @author Ryan Capron
  */
 
- /**
-  * Scanner is used to take in user inputs.
-  */
 import java.util.Scanner;
 
 public class userInterface {
     // HardCoded District and corresponding URLCode for District 36.
     public static String[] DISTRICT = {"36","0015909089"};
+    public static String INVALID = "Invalid parameter inputted please input \"–summary\" or \"–showchat-summary\" or \"–showchat\" followed by a chat integer";
     public static void main(String[] args) throws Exception {
-        userInterface.run();
+        if (args.length == 0){
+            userInterface.run();
+        }
+        else if (args.length == 1 || args.length == 2) {
+            commandQueries.print(args);
+        }
+        else {
+            System.out.println("The required arguments are <request> <chatNumber>");
+        }
     }
 
     public static void run() {
@@ -21,10 +27,9 @@ public class userInterface {
          * Initialize keyboard scanner for input
          */ 
         extractor Extractor = new extractor(DISTRICT[1]);
-        decisionTree DecisionTree = new decisionTree(Extractor.getHTMLArray());
+        decisionTree DecisionTree = new decisionTree(Extractor.getHTMLArray(), DISTRICT[0]);
         intent2query intent2Query;
-        sessionLogger SessionLogger;
-        SessionLogger = new sessionLogger();
+        sessionLogger SessionLogger = new sessionLogger();
         String response;
         Scanner keyboard = new Scanner(System.in);
 
@@ -44,10 +49,13 @@ public class userInterface {
             }
             else {
                 response = DecisionTree.answers(question);
+                if (response.equals("I'm sorry I do not know how to answer that.")) {
+                    response = logDriver.logTest(question);
+                }
                 SessionLogger.addUQuery(question);
                 SessionLogger.addSQuery(response);
-                intent2Query = new intent2query(question);
                 System.out.println(response);
+                intent2Query = new intent2query(question);
             }
         }
         SessionLogger.close();

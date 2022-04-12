@@ -1,0 +1,11 @@
+PROGRAM INFORMATION
+
+Program 1 will dynamically pull website data upon startup.  If the computer is unable to connect to the internet then it will load up a previously downloaded static copy of the html pull.  This extractor will remove the majority of the unnecessary HTML information from the beginning of the txt file to allow for faster information processing.  This html is then read line by line into a local arraylist which can be loaded into other programs.
+
+Program 2 takes in this arraylist of HTML information and searches for certain information with regex.  Once the line is found the program removes all uneccesary information generally through the use of the replaceall() method.  This will allow the impolementing class easy use to pull whichever information needed without any unneeded HTML syntax.
+
+Program 3 ran get methods from the prog2-processor based on which keywords were found in the user query.  For example if "where" and "live" were in the user query, then the chabot would assume the user wants the representative's home address and respectively would print the getHomeAddress method.  If a user query were very elaborate for example, "Where did the representative live five years ago?" then the chatbot would potentially return the wrong answer.  
+
+Program 4 of the chatbot allows the user and/or developer to see match statistics between the user query and keywords.  This information was originally supposed to be used to determine whether or not to return a certain response. Due to the decisionTree returning information solely based on whether keywords are available rather than the percentage of keywords to query size the program will simply prints the query to keyword statistics with every query printed.
+
+Program 5 has three classes: sessionLogger, logDriver, and commandQueries.  sessionLogger records all chatbot interactions and time through the use of the Java Time library.  This timer is started when the logger is constructed and stops when the close method is called.  logDriver is needed so the user can receive previous conversation statistics from conversation with the chatbot and return system prints from the sessionLogger as a String.  commandQueries is used to allow the chatbot to take in command arguments to return statistics of previous chats.  

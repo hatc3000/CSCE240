@@ -25,7 +25,7 @@ public class sessionLogger {
     private ArrayList<String[]> CSVStrings;
     private DateTimeFormatter datePattern = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private DateTimeFormatter timePattern = DateTimeFormatter.ofPattern("HH:mm:ss");
-    private String CSV_PATH = "./prog5-sessionlogger/data/chat_statistics.csv";
+    private String CSV_PATH = "./myrep-chatbot/data/chat_statistics.csv";
     
     /** Public constructor of sessionLogger 
      * Constructs ArrayLists
@@ -65,7 +65,7 @@ public class sessionLogger {
 
     // Write session statistics to new TXT file
     public void writeToTxt() {
-        File file = new File("./prog5-sessionlogger/data/chat_sessions/chatSession" + getChatFile());
+        File file = new File("./myrep-chatbot/data/chat_sessions/chatSession" + getChatFile());
 
         try (FileWriter fw = new FileWriter(file, true);
                 BufferedWriter bw = new BufferedWriter(fw);
@@ -98,17 +98,17 @@ public class sessionLogger {
      * @return index where chat session will be recorded
      */
     private int getChatNumber() {
-        File folder = new File("./prog5-sessionLogger/data/chat_sessions");
+        File folder = new File("./myrep-chatbot/data/chat_sessions");
         File[] chatFiles = folder.listFiles();
         int lastChat = 0;
 
         for (int i = 0;i < chatFiles.length;i++) {
             if (chatFiles[i].isFile()) {
-                int chatNum = (Integer.parseInt(String.valueOf(chatFiles[i].toString().charAt(52))));
+                int chatNum = (Integer.parseInt(String.valueOf(chatFiles[i].toString().charAt(46))));
                 if (chatNum > lastChat) {
                     lastChat = chatNum;
                 }
-            };
+            }
         }
         return lastChat + 1;
     }
@@ -159,17 +159,28 @@ public class sessionLogger {
      * @param chatNumber is number of the chat session to print
      */
     public void printChat(int chatNumber) {
-        String chatPath = "./prog5-sessionLogger/data/chat_sessions/chatSession" + CSVStrings.get(chatNumber)[1];
+        String chatPath = "./myrep-chatbot/data/chat_sessions/chatSession";
+        if (chatNumber <= getTotalChats()) {
+            chatPath += CSVStrings.get(chatNumber)[1];
+        }
+        else {
+            System.out.println("ERROR: there are only " + getTotalChats() + " chat sessions. Please choose a valid number.");
+        }
+
         File chatFile = new File(chatPath);
 
-        try (FileReader txtReader = new FileReader(chatFile);
-        BufferedReader bufferedReader = new BufferedReader(txtReader);) {
+        try {
+            FileReader txtReader = new FileReader(chatFile);
+            BufferedReader bufferedReader = new BufferedReader(txtReader);
             String line = "";
             while (!(line = bufferedReader.readLine()).equals("")) {
                 System.out.println(line);
             }
+
+            txtReader.close();
+            bufferedReader.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            // error message already sent
         }
     }
 
@@ -178,22 +189,31 @@ public class sessionLogger {
      * @param chatNumber is the number of the chat session to print
      */
     public void printChatSummary(int chatNumber) {
-        String chatPath = "./prog5-sessionLogger/data/chat_sessions/chatSession" + CSVStrings.get(chatNumber)[1];
+        String chatPath = "./myrep-chatbot/data/chat_sessions/chatSession";
+        if (chatNumber <= getTotalChats()) {
+            chatPath += CSVStrings.get(chatNumber)[1];
+        }
+        else {
+            System.out.println("ERROR: there are only " + getTotalChats() + " chat sessions. Please choose a valid number.");
+        }
         File chatFile = new File(chatPath);
         ArrayList<String> chat = new ArrayList<String>();
 
-        try (FileReader txtReader = new FileReader(chatFile);
-        BufferedReader bufferedReader = new BufferedReader(txtReader);) {
+        try {
+            FileReader txtReader = new FileReader(chatFile);
+            BufferedReader bufferedReader = new BufferedReader(txtReader);
             String line = "";
             while ((line = bufferedReader.readLine()) != null) {
                 chat.add(line);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            for (int i = chat.size() - 3;i < chat.size();i++) {
+                System.out.println(chat.get(i));
+            }
 
-        for (int i = chat.size() - 3;i < chat.size();i++) {
-            System.out.println(chat.get(i));
+            txtReader.close();
+            bufferedReader.close();
+        } catch (Exception e) {
+            // error message already sent
         }
     }
 

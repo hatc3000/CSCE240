@@ -123,6 +123,28 @@ public class intent2query {
         else if (LCQuery.contains("hi") || LCQuery.contains("hello")) {
             return 1;
         }
+        else if (LCQuery.contains("summary")) {
+            return 1;
+        }
+        else if (LCQuery.contains("show") && LCQuery.contains("chat") && LCQuery.contains("summary")) {
+            return 3;
+        }
+        else if (LCQuery.contains("show") && LCQuery.contains("chat")) {
+            return 2;
+        }
+        else if (LCQuery.contains("region") || LCQuery.contains("counties") || LCQuery.contains("district")) {
+            int ret = 0;
+            if (LCQuery.contains("region")) {
+                ret++;
+            }
+            if (LCQuery.contains("counties")) {
+                ret++;
+            }
+            if (LCQuery.contains("district")) {
+                ret++;
+            }
+            return ret;
+        }
         else {
             // if no keywords found return 0
             return 0;

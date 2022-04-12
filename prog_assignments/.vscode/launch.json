@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Launch userInterface",
+            "request": "launch",
+            "mainClass": "userInterface",
+            "projectName": "prog_assignments_fce0a828",
+            // "args": ["-showchat", "2"]
+        }
+    ]
+}
+
+// TODO run test queries and fill out docs
