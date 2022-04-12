@@ -8,7 +8,6 @@ public class decisionTree {
     /** Declaring private instance of Prog2 getters class */
     private getters get;
     private String distNum;
-    //TODO GET RID OF IMAGINARY NUMBER BY TAKING IN 36 FROM PARENT CLASS
     /** public parameterized constructor */
     public decisionTree(ArrayList<String> webdoc, String distNum) {
         get = new getters(webdoc);
