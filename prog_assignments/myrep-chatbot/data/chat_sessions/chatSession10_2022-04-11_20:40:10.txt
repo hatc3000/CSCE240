@@ -1,9 +1,0 @@
-User: asdf
-System: I'm sorry I do not know how to answer that.
-
-User: asdfhi
-System: Hi, thank you for using this chatbot!
-
-#user_utterance: 2
-#system_utterance: 2
-Chat duration: 0:0:33

@@ -8,7 +8,7 @@
             "request": "launch",
             "mainClass": "userInterface",
             "projectName": "prog_assignments_fce0a828",
-            // "args": ["-showchat", "2"]
+            // "args": ["-showchat", "200"]
         }
     ]
 }

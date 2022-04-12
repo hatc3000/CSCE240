@@ -1,0 +1,76 @@
+User: Tell me about the representative!
+System: Representative Merita A. "Rita" Allison's personal information is as follows: 
+Communications & Legislator
+Born February 19 in Spartanburg County
+Daughter of Raymond A. Nichols and Jessie Estell Caldwell
+James F. Byrnes High School, 1958
+John Robert Powers School of Fashion Merchandising
+February 14, 1959 married William Ronald Allison, 1 child, Katina Allison Degler
+Outstanding Young Women of America, 1972
+Board member, R.D. Anderson Vocational School, 1991-92
+President, South Carolina Jaycee Auxiliary, 1968-69
+South Carolnia PTA of the Year, 1985
+United States Jaycee life member, 1978
+Board member, Miss South Carolina Scholarship Program, 1968-08
+Middle Tyger Chamber of Commerce
+Blue Ribbon Task Force for Higher Education Funding
+Advisory Board, Lyman First Citizens Bank
+President, lifetime member, PTA
+Miss South Carolina Hall of Fame
+Southern Hospitality Club Officer
+Middle Tyger Civitans
+Chairman, General Assembly Women's Caucus, 1994-96
+Vice Chairman, Operation and Management Committee, 1994-96
+Joint Legislative Committee on Children and Families
+State Tax Ad Hoc Study Committee, 1998
+PASS Com. Legislative Study Committee
+Retirement Investment Equity Conference Committee, 1998
+MTA Comm. Center Board, 1998-99
+Chairman, Greer J. Verne Smith Human Resource Center Board, 1996-99
+Woman of Achievement, Piedmont Girl Scouts, 1997
+Victims Advocate Legislator of the Year, 1997
+SCSBA Legislator of the Year, 1999
+Founder and Chairman, GOP Women's Caucus, 1999
+House Budget Committee Conferee, 1999
+NFB Legislator of the Year, 2000
+GOP Assistant Majority Leader, 1999-00
+Middle Tyger Chamber Citizen of the Year
+Woman of Achievement, Miss D/L/W Prog.
+Education Advisor for Governor Mark Sanford, 2003-05
+Legislative Advisor for Governor Mark Sanford, 2006-07
+Operations and Management, 2010
+House Education and Public Works Committee, 2008-10
+House Ways and Means Committee, 2011-
+Member, Wellford Baptist Church
+User: Where does the rep live?
+System: Representative Merita A. "Rita" Allison's home address is: 
+P.O. Box 93
+Lyman 29365
+User: How do I contact my rep?
+System: Representative Merita A. "Rita" Allison's Columbia Phone number is (803) 734-3053
+Representative Merita A. "Rita" Allison's Business address is 429 Blatt Bldg. Columbia 29201
+User: What committees is my repo on?
+System: Representative Merita A. "Rita" Allison's Committee Assignments are: 
+Education and Public Works, Chairman
+User: Tell me everything!
+System: Representative Merita A. "Rita" Allison
+Representative Merita A. "Rita" Allison is a Republican
+Greenville and Spartanburg
+Representative Merita A. "Rita" Allison's Business address is 429 Blatt Bldg. Columbia 29201
+Representative Merita A. "Rita" Allison's Columbia Phone number is (803) 734-3053
+Representative Merita A. "Rita" Allison's Committee Assignments are: 
+Education and Public Works, Chairman
+User: What district do you support for Q/A?
+System: Representative Merita A. "Rita" Allison represents District 36 representing Greenville and Spartanburg
+User: Hello chatbot!
+System: Hi, thank you for using this chatbot!
+User: What is her favorite color?
+System: I'm sorry I do not know how to answer that.
+
+User: What are some of her favorite hobbies? 
+System: I'm sorry I do not know how to answer that.
+
+
+#user_utterance: 9
+#system_utterance: 9
+Chat duration: 2:0:121

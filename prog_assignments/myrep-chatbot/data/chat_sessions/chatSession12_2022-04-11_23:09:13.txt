@@ -1,0 +1,13 @@
+User: This is a sample to show writing to CSV and .txt
+System: Hi, thank you for using this chatbot!
+User: Hi Chatbot
+System: Hi, thank you for using this chatbot!
+User: address
+System: Representative Merita A. "Rita" Allison's Business address is 429 Blatt Bldg. Columbia 29201
+User: fake query
+System: I'm sorry I do not know how to answer that.
+
+
+#user_utterance: 4
+#system_utterance: 4
+Chat duration: 0:0:18

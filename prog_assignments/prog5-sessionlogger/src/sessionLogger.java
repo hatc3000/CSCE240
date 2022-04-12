@@ -7,11 +7,13 @@
  * Time library to calculate duration of conversations
  * Time.format library for formatting time
  * ArrayList used to hold user and system utterance
+ * Regex is used to find highest number in file list
  */
 import java.io.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.regex.*;
 
 public class sessionLogger {
     /** Declaring all private variables 
@@ -100,17 +102,23 @@ public class sessionLogger {
     private int getChatNumber() {
         File folder = new File("./myrep-chatbot/data/chat_sessions");
         File[] chatFiles = folder.listFiles();
-        int lastChat = 0;
+        int highChat = 0;
+        Pattern digit = Pattern.compile("chatSession([0-9]{1,})_.*");
+        Matcher matcher;
 
+        int chatNum;
         for (int i = 0;i < chatFiles.length;i++) {
             if (chatFiles[i].isFile()) {
-                int chatNum = (Integer.parseInt(String.valueOf(chatFiles[i].toString().charAt(46))));
-                if (chatNum > lastChat) {
-                    lastChat = chatNum;
+                matcher = digit.matcher(chatFiles[i].toString());
+                
+                while (matcher.find()) {
+                    if ((chatNum = Integer.parseInt(matcher.group(1))) > highChat) {
+                        highChat = chatNum;
+                    }
                 }
             }
         }
-        return lastChat + 1;
+        return highChat + 1;
     }
 
     // Sets the local date and time to now
