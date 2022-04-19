@@ -1,0 +1,18 @@
+User: What's her home address?
+System: Representative Merita A. "Rita" Allison's home address is: 
+P.O. Box 93
+Lyman 29365
+User: How long has she been in public office?
+System: -Spartanburg County District Five School Board, 1986  - 1992
+-House of Representatives, 1993 - 2002, 2009 - Present
+User: Where does she live?
+System: Representative Merita A. "Rita" Allison's home address is: 
+P.O. Box 93
+Lyman 29365
+User: what is her weight?
+System: I'm sorry I do not know how to answer that.
+
+
+#user_utterance: 4
+#system_utterance: 4
+Chat duration: 1:0:80

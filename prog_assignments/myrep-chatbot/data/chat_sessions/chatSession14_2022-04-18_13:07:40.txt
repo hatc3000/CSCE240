@@ -1,0 +1,14 @@
+User: what is chat summary of 12
+System: #user_utterance: 4
+#system_utterance: 4
+Chat duration: 0:0:18
+
+User: Print chat 12
+System: I'm sorry I do not know how to answer that.
+
+User: show chat 13
+System: 
+
+#user_utterance: 3
+#system_utterance: 3
+Chat duration: 0:0:40

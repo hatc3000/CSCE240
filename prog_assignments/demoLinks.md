@@ -4,3 +4,6 @@ The everything keyword works but it would crash my computer because of the mass 
 
 Demonstration of file writing to CSV and .txt with correct numbering and statistics
 https://drive.google.com/file/d/19dF4Dgxwn4EfjloOcous95sXCByrsY3e/view?usp=sharing
+
+The powerpoint report of this project is below,
+https://emailsc-my.sharepoint.com/:p:/g/personal/rcapron_email_sc_edu/EQDPV5VrqvtMlinXM-jtJS0BGzszejOsU2bueRq8yqJTPw?e=pT3G5O
